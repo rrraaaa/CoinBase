@@ -19,6 +19,7 @@ height: 100%;
 	;
 }
 
+//-------------------------------------header--------------------------------//
 .header {
 & *{
 	z-index: 3;
@@ -399,10 +400,11 @@ text-transform: uppercase;
 	height: 100%;
 	grid-row: 2 / 3;
 	display: grid;
-	grid-template:minmax(auto, 519px) 1fr / 1fr  minmax(auto, 1230px)  1fr;
+	grid-template:1fr / 1fr  minmax(auto, 1230px)  1fr;
 }
 .block-conainer {
 	grid-column: 2 / 3;
+	align-items: center;
 padding: 0px 20px;
 	display: flex;
 	justify-content: space-between;
@@ -432,7 +434,7 @@ letter-spacing: 0px;
 .white {
 	font-family: Poppins;
 	font-size: 40px;
-	font-weight: 400;
+	font-weight: 700;
 	line-height: 60px;
 	letter-spacing: 0px;
 	text-align: left;
@@ -469,18 +471,103 @@ text-fill-color: transparent;
 	}
 }
 .intro__image {
-}
-.intro__image-item {
-}
-.intro__limiter {
-	transform: translateY(10%);
-
-	grid-row: 3 / 4;
-	img{
+	position: relative;
+	padding: 0px 0px 78% 0px;
+	 img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: cover;
 		width: 100%;
-		height: 250px;
+		height: 100%;
 	}
 }
-.intro__limiter-item {
+.intro__limiter {
+	transform: translateY(20%);
 
+	grid-row: 3 / 4;
+
+}
+.intro__limiter-item {
+	img{
+		width: 100%;
+		height: 100%;
+
+		overflow: hidden;
+	}
+}
+
+//!Intro adaptive 1120px
+@media (max-width:1120px){
+	.intro{
+		max-height: 800px; 
+		padding-top: 30px;
+		min-height: 100px;
+
+	}
+	.intro__content{
+
+	}
+	.intro__limiter{
+
+	}
+	.block-conainer__item{
+		flex-basis: 100%;
+	}
+	.block-conainer{
+		flex-direction: column;
+		align-items: center;
+			& *{
+				text-align: center;
+			}
+	}
+	.intro__subtitle h3{
+		text-align: center;
+	}
+	.intro__button{
+		position: relative;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, 0%);
+	}
+	.intro__image img{
+		display: none;
+	}
+}
+
+//!Intro adaptive height
+@media (max-height:647px){
+		.intro{
+			padding-top: 50px;
+			grid-template: 1fr minmax(auto, 247px) / 1fr;
+		}
+		.intro__content{
+			grid-row: 1 / 2;
+	
+		}
+		.intro__limiter{
+			grid-row: 2 / 3;
+		}
+}
+//!Intro adaptive mobile
+@media (max-width:720px){
+	.intro{
+		padding-top: 50px;
+		grid-template: 1fr minmax(auto, 247px) / 1fr;
+	}
+	.intro__content{
+		grid-row: 1 / 2;
+
+	}
+	.intro__limiter{
+		grid-row: 2 / 3;
+
+		
+	}
+}
+
+@media (max-width:321px){
+	.intro__limiter{
+		transform: translateY(-50%);
+	}
 }
