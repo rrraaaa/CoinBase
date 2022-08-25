@@ -507,17 +507,16 @@ text-fill-color: transparent;
 		min-height: 100px;
 	}
 	.intro__content{
+		
 
 	}
 	.intro__limiter{
 
 	}
 	.block-conainer__item{
-		flex-basis: 100%;
+
 	}
 	.block-conainer{
-		flex-direction: column;
-		align-items: center;
 			& *{
 				text-align: center;
 			}
@@ -544,7 +543,7 @@ text-fill-color: transparent;
 		}
 		.intro__content{
 			grid-row: 1 / 2;
-	
+			
 		}
 		.intro__limiter{
 			grid-row: 2 / 3;
@@ -659,6 +658,8 @@ color: #333333;
 
 	}
 
+	
+
 	.welcome .block-conainer{
 		display: grid;
 
@@ -690,6 +691,7 @@ color: #333333;
 	}
 	.welcome__subtitle h3{
 		text-align: center;
+		
 	}
 	.welcome__button{
 		position: relative;
@@ -713,6 +715,11 @@ color: #333333;
 }
 
 @media (max-width:444px){
+	.welcome__subtitle p{
+		font-size: 17px;
+		letter-spacing: 0.2px;
+		font-weight: 500;
+	}
 	.welcome__img{
 		img{
 			transform: translate(22%, -50%);
@@ -726,4 +733,17 @@ color: #333333;
 				transform: translate(22%, -180%);
 			}
 		}
+		}
+
+
+		//! Adaptive for header
+		@media (max-width:400px){
+			.wrapper{
+				display: grid;
+				grid-template:minmax(auto, 70px) 1fr minmax(351px ,auto) / 1fr;
+				grid-template-areas: "header"
+											"content"
+											"footer"
+				;
+			}
 		}
