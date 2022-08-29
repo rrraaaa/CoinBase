@@ -1094,3 +1094,17 @@ text-fill-color: transparent;
 			gap: 150px;
 		}
 	}
+
+	//! Smoth animation for pictures
+	.img{
+		transition:transform .3s cubic-bezier(.65,.04,.43,1.15);
+		&:hover{
+			transform: scale(1.1);
+		}
+	}
+	.intro__image{
+		transition:transform .3s cubic-bezier(.65,.04,.43,1.15);
+		&:hover{
+			transform: scale(1.1);
+		}
+	}
