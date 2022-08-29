@@ -307,7 +307,8 @@ gap:4px;
 }
 
 .select{
-	display: none;
+	transition: opacity .5s ease-in, top .5s ease-in 0.3s;
+	opacity: 0;
 	z-index: 10000;
 background: #fff;
 	& ul {
@@ -345,14 +346,16 @@ color: #333333;
 	width: 142px;
 	height: 62px;
 	position: absolute;
-	top: 39px;
+	top: 59px;
 left: 50%;
 transform: translate(0% ,50%);
 		
 	
 }
 .select.select_active{
+	top: 39px;
 	display: flex;
+	opacity: 1;
 	z-index: 10000;
 }
 
