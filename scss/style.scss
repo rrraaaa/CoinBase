@@ -360,12 +360,18 @@ transform: translate(0% ,50%);
 }
 
 .button {
+	transition: all 0.5s ease-in-out;
+	&:hover{
+		box-shadow: 3px 3px 3px skyblue;
+	}
+		animation: hover-button 1s infinite ease;
 	width: 157px;
 	height: 54px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: linear-gradient(178.18deg, #FD749B -13.56%, #281AC8 158.3%);
+	background-size:400%;
 border-radius: 100px;
 & span{
 	font-family: Poppins;
@@ -379,6 +385,17 @@ text-transform: uppercase;
 }
 }
 
+@keyframes hover-button{
+	0%{
+		background-size: 400%;
+	}
+	50%{
+		background-size: 100%;
+	}
+	100%{
+		background-size: 400%;
+	}
+}
 .header__button {
 	
 }
