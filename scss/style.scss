@@ -364,7 +364,7 @@ transform: translate(0% ,50%);
 	&:hover{
 		box-shadow: 3px 5px 3px skyblue;
 	}
-		animation: hover-button 2s infinite ease;
+		animation: shine 2s infinite ease;
 	width: 157px;
 	height: 54px;
 	display: flex;
@@ -385,17 +385,7 @@ text-transform: uppercase;
 }
 }
 
-@keyframes hover-button{
-	0%{
-		background-position-x: 0%;
-	}
-	50%{
-		background-position-x: 100%;
-	}
-	100%{
-		background-position-x: 0%;
-	}
-}
+
 .header__button {
 	
 }
@@ -407,13 +397,15 @@ text-transform: uppercase;
 
 
 //----------------------------------------------------intro----------------------------------------//
+.purple-bg{
+	animation: shine 3s infinite ease-in-out;
+	background: linear-gradient(178.18deg, #FD749B -13.56%, #281AC8 158.3%);
+	background-size:800%;
+}
 .intro {
-
 	position: relative;
 	z-index: 1;
-	
 	gap: 130px;
-	background: linear-gradient(178.18deg, #FD749B -13.56%, #281AC8 158.3%);
 	display: grid;
 	grid-template: 1fr minmax(auto, 338px) minmax(auto, 237px) / 1fr;
 	min-height: 750px;
@@ -514,6 +506,9 @@ text-fill-color: transparent;
 
 //!Intro adaptive 1120px
 @media (max-width:1120px){
+	.purple-bg{
+		background-size: 1000%;
+	}
 	.intro{
 		margin-bottom: 100px;
 		max-height: 800px; 
@@ -544,6 +539,7 @@ text-fill-color: transparent;
 
 //!Intro adaptive height
 @media (max-height:680px){
+	
 		.intro{
 			padding-top: 50px;
 			grid-template: 1fr minmax(auto, 247px) / 1fr;
@@ -557,6 +553,9 @@ text-fill-color: transparent;
 }
 //!Intro adaptive mobile
 @media (max-width:720px){
+	.purple-bg{
+		background-size:2000%;
+	}
 	.intro{
 		padding-top: 50px;
 		grid-template: 1fr minmax(auto, 247px) / 1fr;
@@ -605,7 +604,7 @@ text-fill-color: transparent;
 		max-height: 800px; 
 		padding-top: 30px;
 		min-height: 100px;
-		margin-bottom: 400px;
+		margin-bottom: 300px;
 	}
 	.welcome__texts{
 	
@@ -645,6 +644,7 @@ text-fill-color: transparent;
 
 }
 
+
 @media (max-width:444px){
 	.welcome__subtitle p{
 		font-size: 17px;
@@ -652,7 +652,11 @@ text-fill-color: transparent;
 		font-weight: 500;
 	}
 	}
-
+	@media (max-width:390px){
+		.welcome{
+			margin-bottom: 400px;
+		}
+	}
 	@media (max-width:320px){
 		.welcome__img{
 			img{
@@ -660,6 +664,7 @@ text-fill-color: transparent;
 			}
 		}
 		}
+		
 
 
 		//! Adaptive for header
@@ -692,7 +697,6 @@ text-fill-color: transparent;
 
 		//----------------------------------------------------block table----------------------------------//
 		.table {
-			background: linear-gradient(178.18deg, #FD749B -13.56%, #281AC8 158.3%);
 			display: grid;
 			grid-template: minmax(auto, 423px) 1fr minmax(auto, 249px);
 		}
@@ -1128,3 +1132,16 @@ text-fill-color: transparent;
 			transform: scale(1.1);
 		}
 	}
+
+	//! Smooth animation of buttons and background
+@keyframes shine{
+	0%{
+		background-position-x: 0%;
+	}
+	50%{
+		background-position-x: 100%;
+	}
+	100%{
+		background-position-x: 0%;
+	}
+}
