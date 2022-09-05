@@ -349,11 +349,10 @@ color: #333333;
 	top: 59px;
 left: 50%;
 transform: translate(0% ,50%);
-		
-	
 }
 .select.select_active{
 	top: 39px;
+	transform: translate(0%, 50%);
 	display: flex;
 	opacity: 1;
 	z-index: 10000;
@@ -1093,7 +1092,7 @@ text-fill-color: transparent;
 			text-align: center;
 			
 		}
-		.button{
+		.button:not(.backside-btc__button, .backside-card__button){
 		position: relative;
 		top: 0;
 		left: 50%;
@@ -1208,10 +1207,13 @@ text-fill-color: transparent;
 .title {
 }
 .trade__columns {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 }
 .trade__column {
+	position: relative;
+	z-index: 4;
 	width: 262px;
 	height: 226px;
 	display: flex;
@@ -1227,11 +1229,16 @@ text-fill-color: transparent;
 	align-items: center;
 }
 .trade__column-item {
+	position: relative;
+	z-index: 2;
+	background: white;
 	display:flex;
+	width: 100%;
+	height: 74%;
 	flex-direction:column;
 	align-items:center;
 	gap:50px;
-	justify-content:end;
+	justify-content:center;
 }
 .trade__icon {
 	img{
@@ -1276,12 +1283,9 @@ color:#333;
 	.trade__limiter{
 		padding: 0px 0px 48%;
 	}
-	.trade__column{
-		width: 200px;
-		height: 186px;
-	}
+
 }
-@media(max-width:485px){
+@media(max-width:624px){
 
 	.trade{
 		max-height:1101px;
@@ -1316,4 +1320,58 @@ color:#333;
 	
 		}
 	}
+}
+
+//! Rotatable cards
+.backside{
+}
+.backside-btc, .backside-card {
+	transform: scaleX(-1);
+	transition:all ease-in .2s;
+	opacity: 0;
+	position: absolute;
+	top: 7%;
+	z-index: 2;
+	background:white;
+	left: 0;
+	width: 95%;
+	height: 88%;
+	display:flex;
+	flex-direction:column;
+	gap:50px;
+	align-items: center;
+	padding: 10px;
+	justify-content: center;
+&.active{
+	opacity: 1;
+}
+		}
+.backside-btc__title, .backside-card__title {
+	h2{
+		line-height: 30px;
+		font-size: 25px;
+	}
+	&:after{
+		top: 120%;
+		left: 50%;
+		transform:translate(-50%, 0%);
+	}
+}
+.title {
+}
+
+.button {
+}
+.trade__column.rotate{
+
+	transform:rotateY(180deg);
+	.trade__column-item{
+		display:none;
+	}
+}
+//default value
+.trade__column{
+	transform-style: preserve-3d;
+	transition:all .5s ease-in-out 0s;
+	transform:rotateY(0deg);
 }

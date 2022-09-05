@@ -41,3 +41,25 @@ function openBurgerMenu(event) {
 	event.target.classList.toggle("active");
 
 }
+
+//! Rotatable cards
+const getTradeColumnParent = document.querySelector(".trade__columns");
+const getBtcColumn = document.querySelector(".btc-column");
+const getCardColumn = document.querySelector(".card-column")
+const getTradeColumnItem = document.querySelectorAll(".trade__column-item");
+const getBackSideBtc = document.querySelector(".backside-btc");
+const getBackSideCard = document.querySelector(".backside-card")
+
+getTradeColumnParent.addEventListener("click", (event) => {
+			if(event.target.classList.contains('backside')){
+				if(event.target.classList.contains('backside-btc')){
+					getBackSideBtc.classList.toggle('active');
+					getBtcColumn.classList.toggle('rotate')
+				}
+				if(event.target.classList.contains('backside-card')){
+					getBackSideCard.classList.toggle('active');
+					getCardColumn.classList.toggle('rotate');
+				}
+			}
+})
+
