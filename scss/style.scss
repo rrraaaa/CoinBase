@@ -48,6 +48,7 @@ height: 100%;
 	grid-template: 1fr / 1fr minmax(auto, 142px) minmax(auto, 538px) minmax(auto, 468px) 1fr;
 	align-items: center;
 	gap:30px;
+padding: 20px;
 
 
 }
@@ -989,7 +990,31 @@ color: #333;
 		}
 	}
 
+.title-white{
+	position: relative;
+	h2{
+		font-family: Poppins;
+font-size: 28px;
+font-weight: 700;
+line-height: 65px;
+letter-spacing: 0px;
+text-align: center;
+color:white;
+	}
+	&::after{
+		content: '';
+		width: 50px;
+		height: 6px;
+		display: inline-block;
+		position: absolute;
+		top: 100%;
+		border-radius:5px ;
+		left: 50%;
+		transform:translate(-50%, 0%);
+		background: #e34b7b;
 
+	}
+}
 	.title{
 		position: relative;
 	h2{
@@ -1394,6 +1419,10 @@ color:#333;
 
 
 //---------------------block blog---------------------------------------//
+.z-index-overlap-cnt{
+	position: relative;
+	z-index:2;
+}
 .blog {
 	display:grid;
 	grid-template:1fr / 1fr minmax(auto, 1230px) 1fr 
@@ -1559,5 +1588,103 @@ color:#888888;
 @media(max-width:500px){
 	.cards{
 		grid-template:repeat(auto-fit, 33%) / 1fr minmax(auto, 100%) 1fr;
+	}
+}
+
+
+
+//---------------------------Block feedback------------------------------------------//
+.feedback {
+display: flex;
+flex-direction: column;
+gap:50px;
+}
+.feedback__limiterf {
+	position: relative;
+	z-index: 1;
+	transform:translate(0%, -20%);
+}
+.feedback__container {
+	position: relative;
+	display:grid;
+	grid-template: 1fr / 1fr minmax(auto, 400px) 1fr;
+}
+.grad-dot-top-left {
+	position: absolute;
+	top: 0;
+	left: 10%;
+}
+.grad-dot-bottom-right {
+	position: absolute;
+	bottom: 0;
+	right:10%;
+}
+.feedback .block__conainer {
+
+}
+.feedback .block__conainer-item {
+
+}
+.feedback__main {
+	padding-inline:20px;
+	gap:50px;
+	display:flex;
+	flex-direction:column;
+
+}
+.feedback__title {
+	h2{
+		color:#E0E0E0;
+	}
+}
+.title {
+}
+.feedback__subtitle {
+	h3{
+		color:white;
+		text-align: center;
+	}
+}
+.subtitle {
+}
+.feedback__design-bubbles {
+position: relative;
+padding:0px 0px 36% 0px;
+	img{
+		position: absolute;
+		top:0;
+		left:0%;
+		transform:translate(-50%, 0%);
+		object-fit:cover;
+		z-index:1;
+		width: 200%;
+		height: 200%;
+		transform:translate(-25%, -50%);
+	}
+
+}
+.feedback__limiterl {
+	transform:translate(0%, 20%);
+}
+
+.feedback__design-feedback{
+	position: relative;
+	top: 50%;
+	left: 0%;
+	img{
+			width: 100%;
+			height: 100%;
+		}
+		z-index: 2;
+	width: 100%;
+}
+//! Adaptive for block feedback
+@media(max-width:814px){
+	.feedback__design-bubbles{
+		img{
+			width: 100%;
+			height:100%;
+			left: 20%;
+		}
 	}
 }
