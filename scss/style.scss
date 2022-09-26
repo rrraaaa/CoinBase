@@ -1688,3 +1688,39 @@ padding:0px 0px 36% 0px;
 		}
 	}
 }
+
+//----------------------------------------------------------------------bock download---------------------------------------------------------------------//
+.download {
+	display:grid;
+	grid-template:1fr / 1fr minmax(auto, 400px) 1fr;
+}
+.download__container {
+	grid-column: 2 / 3;
+	display:flex;
+	flex-direction:column;
+	gap: 30px;
+	align-items: center;
+}
+.download__title {
+}
+.title {
+	&:after{
+		left:50%;
+		transform:translate(-50%, 0%)
+	}
+}
+.download__subtitle {
+	h3{
+		text-align:center;
+	}
+}
+.subtitle {
+}
+.download__icons {
+	display: flex;
+	gap:50px;
+	align-items:center;
+}
+.download__icons-item {
+
+}
